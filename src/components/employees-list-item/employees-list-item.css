@@ -1,0 +1,79 @@
+.list__group-item {
+    display: flex;
+    flex-direction: row;
+
+    list-style-type: none;
+    padding: 15px 20px;
+    background-color: #fff;
+    color: #3d5a80;
+    border-bottom: 1px solid #3d5a80;
+}
+
+.list__group-item:last-child {
+    border-bottom: none;
+}
+
+.list__group-item span {
+    line-height: 35px;
+    font-size: 20px;
+    cursor: pointer;
+    min-width: 500px;
+}
+
+.list__group-item input {
+    line-height: 35px;
+    font-size: 20px;
+    text-align: center;
+    border: 0;
+}
+
+.list__group-item button {
+    width: 35px;
+    height: 35px;
+    margin: 3px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.list__group-item .btn__cookie {
+    color: #e09f3e;
+}
+
+.list__group-item .btn__trash {
+    color: #e5383b;
+}
+
+.list__group-item .fa-star {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 16px;
+    color: #FFD700;
+    transition: 0.3s all;
+    transform: translateX(30px);
+    opacity: 0;
+}
+
+.list__group-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 30px;
+}
+
+.list__group-item.like .fa-star {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.list__group-item.increase .list__group-item-label, .list__group-item.increase .list__group-item-input {
+    color: #e09f3e;
+}
+  
+.list__group-item.increase .btn-star {
+    color: #aeaeae;
+}
+  
