@@ -12,13 +12,22 @@ class App extends React.Component{
     this.state = {
       data: [
           {name: 'Samat K.', salary: 800, increase: false, rise: false, id:1},
-          {name: 'Marat L.', salary: 800, increase: false, rise: false, id:2},
+          {name: 'Marat L.', salary: 800, increase: true, rise: false, id:2},
           {name: 'Kanat K.', salary: 800, increase: false, rise: false, id:3},
-      ]
+      ],
+      search: '',
+      filter: 'all',
     }
     this.maxId = 4;
   }
 
+  deleteItem = (id) =>{
+    this.setState(({data})=>{
+      return{
+        data: data.filter(item => item.id !== id)
+      }
+    })
+  }
 
   addItem = (name, salary) => {
     const newItem = {
@@ -39,12 +48,35 @@ class App extends React.Component{
     }
 }
 
+onToggleIncrease = (id) =>{
+  this.setState(({data})=>({
+      data: data.map(item=>{
+          if(item.id === id){
+              return{...item, increase: !item.increase}
+          }
+          return item;
+      })
+  }))
+}
 
+onToggleRise = (id) =>{
+  this.setState(({data})=>({
+      data: data.map(item=>{
+          if(item.id === id){
+              return{...item, rise: !item.rise}
+          }
+          return item;
+      })
+  }))
+}
   render(){
-    const {data} = this.state
+    const {data, search, filter} = this.state
+    const lowercasedSearch = search.toLowerCase();
+    const employees = this.state.data.length;
+    const increased = this.state.data.filter(item => item.increase).length
     return (
       <div className="app">
-        <AppInfo/>
+        <AppInfo employees={employees}increased={increased}/>
 
         <div className='search__panel'>
             <SearchPanel/>
@@ -52,7 +84,11 @@ class App extends React.Component{
         </div>
 
         <EmployeesList
-                      data={data}/>
+                      data={data}
+                      onDelete={this.deleteItem}
+                      onToggleIncrease={this.onToggleIncrease}
+                      onToggleRise={this.onToggleRise}
+                      lowercasedSearch={lowercasedSearch}/>
         <EmployeesAddForm
                       onAdd={this.addItem}/>
       </div>
