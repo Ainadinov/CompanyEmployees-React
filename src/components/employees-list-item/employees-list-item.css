@@ -6,7 +6,7 @@
     padding: 15px 20px;
     background-color: #fff;
     color: #3d5a80;
-    border-bottom: 1px solid #3d5a80;
+    /* border-bottom: 1px solid #3d5a80; */
 }
 
 .list__group-item:last-child {

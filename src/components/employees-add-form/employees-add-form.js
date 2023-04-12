@@ -34,19 +34,19 @@ class EmployeesAddForm extends React.Component{
                     className='add__from'
                     onSubmit={this.onSubmit}>
                     <input type="text"  
-                            className='form__control new__post-label' 
+                            className='addform__control' 
                             placeholder='Как его зовут?'
                             name='name'
                             value={name}
                             onChange={this.onValueChange}/>
                     <input type="number"  
-                            className='form__control new__post-label' 
+                            className='addform__control' 
                             placeholder='З\П в $?'
                             name='salary'
                             value={salary}
                             onChange={this.onValueChange}/>
                     <button type='submit' 
-                            className='btn btn__outline-ligth'>Добавить</button>
+                            className='btn'>Добавить</button>
                 </form>
             </div>
         )

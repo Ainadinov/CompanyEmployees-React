@@ -5,6 +5,7 @@
     border-radius: 4px;
     box-shadow: 15px 15px 30px rgba(0,0,0, .15);
     color: #fff;
+    gap: 10px;
 }
 
 .add__form {
@@ -14,4 +15,15 @@
 .add__form input {
     width: 350px;
     margin-right: 20px;
+}
+
+.addform__control{
+    padding: 10px 0px;
+    padding-left: 15px;
+    border-radius: 4px;
+    border: 1px solid #fff;
+    outline: none;
+    margin-right: 10px;
+
+    color: #3d5a80;  
 }
